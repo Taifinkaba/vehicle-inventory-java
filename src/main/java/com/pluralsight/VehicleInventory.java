@@ -11,6 +11,9 @@ public class VehicleInventory {
 
         // call preload vehicles
         preloadVehicles(inventory);
+
+        // call display menu
+        displayMenu();
     }
 
     // 6 vehicles preload
@@ -21,5 +24,19 @@ public class VehicleInventory {
         inventory.add(new Vehicle(101124, "Honda Civic", "White", 70000, 7500));
         inventory.add(new Vehicle(101125, "Subaru Outback", "Green", 55000, 14500));
         inventory.add(new Vehicle(101126, "Jeep Wrangler", "Yellow", 30000, 16000));
+    }
+
+    // display menu for all 6 options
+    static void displayMenu() {
+        System.out.print("""
+                What do you want to do?
+                 1 - List all vehicles
+                 2 - Search by make/model
+                 3 - Search by price range
+                 4 - Search by color
+                 5 - Add a vehicle
+                 6 - Quit
+                Enter your command: 
+                """);
     }
 }
