@@ -14,6 +14,33 @@ public class VehicleInventory {
 
         // call display menu
         displayMenu();
+
+        // user input
+        int input = myScanner.nextInt();
+        myScanner.nextLine();
+
+        switch (input){
+            case 1:
+                listAllVehicles(inventory);
+                break;
+            case 2:
+                listAllVehicles(inventory);
+                break;
+            case 3:
+                listAllVehicles(inventory);
+                break;
+            case 4:
+                listAllVehicles(inventory);
+                break;
+            case 5:
+                listAllVehicles(inventory);
+                break;
+            case 6:
+                listAllVehicles(inventory);
+                break;
+            default:
+                System.out.println("Not a valid option, try again!");
+        }
     }
 
     // 6 vehicles preload
@@ -38,5 +65,12 @@ public class VehicleInventory {
                  6 - Quit
                 Enter your command: 
                 """);
+    }
+
+    // option 1: list all vehicles
+    static void listAllVehicles(ArrayList<Vehicle> inventory) {
+        for(Vehicle vehicle : inventory){
+            System.out.printf("Id: %d, Make Model: %s, Color: %s, Odometer: %d, Price: $%.2f%n", vehicle.getVehicleId(), vehicle.getMakeModel(), vehicle.getColor(), vehicle.getOdometerReading(), vehicle.getPrice());
+        }
     }
 }
