@@ -24,16 +24,16 @@ public class VehicleInventory {
                 listAllVehicles(inventory);
                 break;
             case 2:
-                listAllVehicles(inventory);
+                findVehiclesByMakeModel(inventory, myScanner);
                 break;
             case 3:
-                listAllVehicles(inventory);
+                findVehiclesByPrice(inventory, myScanner);
                 break;
             case 4:
-                listAllVehicles(inventory);
+                findVehiclesByColor(inventory, myScanner);
                 break;
             case 5:
-                listAllVehicles(inventory);
+                addVehicle(inventory, myScanner);
                 break;
             case 6:
                 listAllVehicles(inventory);
