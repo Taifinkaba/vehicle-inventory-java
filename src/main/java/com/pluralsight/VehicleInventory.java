@@ -41,6 +41,10 @@ public class VehicleInventory {
             default:
                 System.out.println("Not a valid option, try again!");
         }
+
+        // end scanner(good practice)
+        myScanner.close();
+
     }
 
     // 6 vehicles preload
@@ -73,4 +77,27 @@ public class VehicleInventory {
             System.out.printf("Id: %d, Make Model: %s, Color: %s, Odometer: %d, Price: $%.2f%n", vehicle.getVehicleId(), vehicle.getMakeModel(), vehicle.getColor(), vehicle.getOdometerReading(), vehicle.getPrice());
         }
     }
+
+    // option 2: search vehicles by make or model.
+    static void findVehiclesByMakeModel(ArrayList<Vehicle> inventory, Scanner myScanner) {
+        System.out.println("Enter a make or model: ");
+        String search = myScanner.nextLine().trim().toLowerCase();
+
+    }
+
+    // option 3: search vehicles within price
+    static void findVehiclesByPrice(ArrayList<Vehicle> inventory, Scanner myScanner) {
+
+    }
+
+    // option 4: search vehicles by color
+    static void findVehiclesByColor(ArrayList<Vehicle> inventory, Scanner myScanner) {
+
+    }
+
+    // option 5: add a vehicle to the inventory
+    static void addVehicle(ArrayList<Vehicle> inventory, Scanner myScanner) {
+
+    }
+
 }
