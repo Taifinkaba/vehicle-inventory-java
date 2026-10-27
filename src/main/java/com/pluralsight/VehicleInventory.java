@@ -36,7 +36,7 @@ public class VehicleInventory {
                 addVehicle(inventory, myScanner);
                 break;
             case 6:
-                listAllVehicles(inventory);
+                System.out.println("Goodbye!");
                 break;
             default:
                 System.out.println("Not a valid option, try again!");
@@ -71,10 +71,14 @@ public class VehicleInventory {
                 """);
     }
 
+    // display vehicle
+    static void displayVehicle(Vehicle vehicle) {
+        System.out.printf("Id: %d, Make Model: %s, Color: %s, Odometer: %d, Price: $%.2f%n", vehicle.getVehicleId(), vehicle.getMakeModel(), vehicle.getColor(), vehicle.getOdometerReading(), vehicle.getPrice());
+    }
     // option 1: list all vehicles
     static void listAllVehicles(ArrayList<Vehicle> inventory) {
         for(Vehicle vehicle : inventory){
-            System.out.printf("Id: %d, Make Model: %s, Color: %s, Odometer: %d, Price: $%.2f%n", vehicle.getVehicleId(), vehicle.getMakeModel(), vehicle.getColor(), vehicle.getOdometerReading(), vehicle.getPrice());
+            displayVehicle(vehicle);
         }
     }
 
@@ -82,6 +86,18 @@ public class VehicleInventory {
     static void findVehiclesByMakeModel(ArrayList<Vehicle> inventory, Scanner myScanner) {
         System.out.println("Enter a make or model: ");
         String search = myScanner.nextLine().trim().toLowerCase();
+
+        // tracker to see if we got a match
+        boolean found = false;
+
+        for(Vehicle vehicle : inventory) {
+            if(vehicle.getMakeModel().trim().toLowerCase().contains(search)){
+                displayVehicle(vehicle);
+                found = true;
+            }
+        }
+
+        if(!found) System.out.println("No match was found!");
 
     }
 
